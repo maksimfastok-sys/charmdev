@@ -4,7 +4,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Setup NDK
       uses: nttld/setup-ndk@v1
       id: setup-ndk
@@ -14,7 +14,7 @@ jobs:
       run: |
         $ANDROID_NDK_HOME/ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=./Android.mk
     - name: Upload Result
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: libcharmdev
         path: libs/arm64-v8a/libcharmdev.so
